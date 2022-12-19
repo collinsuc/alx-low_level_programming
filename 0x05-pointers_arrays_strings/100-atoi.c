@@ -44,7 +44,7 @@ int char_to_int(char c)
 
 	switch ((int)c)
 	{
-	case 48
+	case 48:
 		res =  0;
 		break;
 	case 49:
