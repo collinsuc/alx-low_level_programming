@@ -191,17 +191,17 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 		tmp = tmp->next;
 	if (!tmp)
 		return (NULL);
-OBOBOB	else
+	else
 		return (tmp->value);
-OBOBOB}
+}
 
-OBOBOB/**
+/**
  * shash_table_print - print key/values of hash table in ascending order
  * @ht: hash table
-OBOBOB */
+ */
 void shash_table_print(const shash_table_t *ht)
 {
-OBOBOB	shash_node_t *node;
+	shash_node_t *node;
 	char *comma = "";
 
 	if (!ht || !ht->array)
@@ -231,22 +231,22 @@ void shash_table_print_rev(const shash_table_t *ht)
 		return;
 
 	putchar('{');
-OBOBOB	node = ht->stail;
+	node = ht->stail;
 	while (node)
 	{
 		printf("%s'%s': '%s'", comma, node->key, node->value);
-OBOBOB		comma = ", ";
+		comma = ", ";
 		node = node->sprev;
 	}
-OBOBOB	puts("}");
+	puts("}");
 }
 
-OBOBOB/**
+/**
  * shash_table_delete - free and delete sorted hash table
  * @ht: hash table
  */
 void shash_table_delete(shash_table_t *ht)
-OBOBOB{
+{
 	unsigned long int idx = 0;
 	shash_node_t *node, *next;
 
@@ -273,9 +273,9 @@ void shash_table_delete(shash_table_t *ht)
 			node->value = NULL;
 			free(node);
 			node = next;
-OBOBOB		}
-OBOBOB		idx++;
+		}
+		idx++;
 	}
-OBOBOB	free(ht->array);
+	free(ht->array);
 	free(ht);
 }
